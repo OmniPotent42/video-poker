@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Hustlers Rough';
+  src: url(assets/hustlers-rough.ttf);
+}
+
+h1 {
+  font-family: 'Hustlers Rough';
+  font-size: 5em;
+}
+
+body {
+  font-size: 16px;
+}

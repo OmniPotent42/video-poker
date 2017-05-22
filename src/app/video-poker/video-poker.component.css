@@ -1,0 +1,29 @@
+h1 {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  margin: 0 -5px;
+}
+
+.card {
+  position: relative;
+  margin: 0 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.card.mulligan:after {
+  content: ' ';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  
+  background-color: rgba(255,255,255,.5);
+}

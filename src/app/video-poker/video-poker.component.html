@@ -1,0 +1,13 @@
+<h1>Video Poker</h1>
+<div class="cards">
+  <div
+       *ngFor="let card of player.hand as PokerCard; let i = index;"
+       (click)="card.keep = !(card.keep); log(card.keep)"
+       [ngClass]="['card', card.getClass()]"
+       [class.mulligan]="!card.keep" >
+    <div class="card-bg"></div>
+  </div>
+</div>
+<button [disabled]="started" (click)="startGame()">Play</button>
+<button [disabled]="!started" (click)="mulligan()">Draw</button>
+<div>{{winText}}</div>

@@ -1,0 +1,27 @@
+$suits: 'C' 'D' 'H' 'S';
+$max_value: 13;
+
+$img-height: 2904px;
+$img-width: 6500px;
+
+$width: $img-width/13;
+$height: $img-height/4;
+
+$ratio: .5;
+
+.card-bg {
+  width: $width * $ratio;
+  height: $height * $ratio;
+  background-image: url(../../assets/cardsprites.jpg);
+  background-size: $img-width * $ratio $img-height * $ratio;
+}
+
+@each $suit in $suits {
+  $s_i: index($suits, $suit) - 1;
+  @for $i from 1 through $max_value {
+    $pos-x: $i - 1;
+    .#{$suit + '-' + $i} .card-bg {
+      background-position: -$pos-x * $width * $ratio $s_i * -$height * $ratio;
+    }
+  }
+}

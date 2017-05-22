@@ -1,0 +1,163 @@
+.card-bg {
+  width: 250px;
+  height: 363px;
+  background-image: url(../../assets/cardsprites.jpg);
+  background-size: 3250px 1452px; }
+
+.C-1 .card-bg {
+  background-position: 0px 0px; }
+
+.C-2 .card-bg {
+  background-position: -250px 0px; }
+
+.C-3 .card-bg {
+  background-position: -500px 0px; }
+
+.C-4 .card-bg {
+  background-position: -750px 0px; }
+
+.C-5 .card-bg {
+  background-position: -1000px 0px; }
+
+.C-6 .card-bg {
+  background-position: -1250px 0px; }
+
+.C-7 .card-bg {
+  background-position: -1500px 0px; }
+
+.C-8 .card-bg {
+  background-position: -1750px 0px; }
+
+.C-9 .card-bg {
+  background-position: -2000px 0px; }
+
+.C-10 .card-bg {
+  background-position: -2250px 0px; }
+
+.C-11 .card-bg {
+  background-position: -2500px 0px; }
+
+.C-12 .card-bg {
+  background-position: -2750px 0px; }
+
+.C-13 .card-bg {
+  background-position: -3000px 0px; }
+
+.D-1 .card-bg {
+  background-position: 0px -363px; }
+
+.D-2 .card-bg {
+  background-position: -250px -363px; }
+
+.D-3 .card-bg {
+  background-position: -500px -363px; }
+
+.D-4 .card-bg {
+  background-position: -750px -363px; }
+
+.D-5 .card-bg {
+  background-position: -1000px -363px; }
+
+.D-6 .card-bg {
+  background-position: -1250px -363px; }
+
+.D-7 .card-bg {
+  background-position: -1500px -363px; }
+
+.D-8 .card-bg {
+  background-position: -1750px -363px; }
+
+.D-9 .card-bg {
+  background-position: -2000px -363px; }
+
+.D-10 .card-bg {
+  background-position: -2250px -363px; }
+
+.D-11 .card-bg {
+  background-position: -2500px -363px; }
+
+.D-12 .card-bg {
+  background-position: -2750px -363px; }
+
+.D-13 .card-bg {
+  background-position: -3000px -363px; }
+
+.H-1 .card-bg {
+  background-position: 0px -726px; }
+
+.H-2 .card-bg {
+  background-position: -250px -726px; }
+
+.H-3 .card-bg {
+  background-position: -500px -726px; }
+
+.H-4 .card-bg {
+  background-position: -750px -726px; }
+
+.H-5 .card-bg {
+  background-position: -1000px -726px; }
+
+.H-6 .card-bg {
+  background-position: -1250px -726px; }
+
+.H-7 .card-bg {
+  background-position: -1500px -726px; }
+
+.H-8 .card-bg {
+  background-position: -1750px -726px; }
+
+.H-9 .card-bg {
+  background-position: -2000px -726px; }
+
+.H-10 .card-bg {
+  background-position: -2250px -726px; }
+
+.H-11 .card-bg {
+  background-position: -2500px -726px; }
+
+.H-12 .card-bg {
+  background-position: -2750px -726px; }
+
+.H-13 .card-bg {
+  background-position: -3000px -726px; }
+
+.S-1 .card-bg {
+  background-position: 0px -1089px; }
+
+.S-2 .card-bg {
+  background-position: -250px -1089px; }
+
+.S-3 .card-bg {
+  background-position: -500px -1089px; }
+
+.S-4 .card-bg {
+  background-position: -750px -1089px; }
+
+.S-5 .card-bg {
+  background-position: -1000px -1089px; }
+
+.S-6 .card-bg {
+  background-position: -1250px -1089px; }
+
+.S-7 .card-bg {
+  background-position: -1500px -1089px; }
+
+.S-8 .card-bg {
+  background-position: -1750px -1089px; }
+
+.S-9 .card-bg {
+  background-position: -2000px -1089px; }
+
+.S-10 .card-bg {
+  background-position: -2250px -1089px; }
+
+.S-11 .card-bg {
+  background-position: -2500px -1089px; }
+
+.S-12 .card-bg {
+  background-position: -2750px -1089px; }
+
+.S-13 .card-bg {
+  background-position: -3000px -1089px; }
+
+/*# sourceMappingURL=card-classes.css.map */
