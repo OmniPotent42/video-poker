@@ -1,13 +1,14 @@
 <h1>Video Poker</h1>
+<div class="money">Money: {{money}}</div>
 <div class="cards">
   <div
-       *ngFor="let card of player.hand as PokerCard; let i = index;"
-       (click)="card.keep = !(card.keep); log(card.keep)"
+       *ngFor="let card of player.hand; let i = index;"
+       (click)="toggleMulligan(i)"
        [ngClass]="['card', card.getClass()]"
-       [class.mulligan]="!card.keep" >
+       [class.mulligan]="isMulligan(i)" >
     <div class="card-bg"></div>
   </div>
 </div>
 <button [disabled]="started" (click)="startGame()">Play</button>
 <button [disabled]="!started" (click)="mulligan()">Draw</button>
-<div>{{winText}}</div>
+<div class="win-text">{{winText}}</div>

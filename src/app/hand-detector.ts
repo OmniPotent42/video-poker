@@ -146,31 +146,32 @@ export class HandDetector {
   
   detectBestHand() {
     if (this.doTest(this.isRoyalFlush.bind(this))) {
-      return 'Royal Flush';
+      return ['Royal Flush', 10000];
     }
     if (this.doTest(this.isStraightFlush.bind(this))) {
-      return 'Straight Flush';
+      return ['Straight Flush', 500];
     }
     if (this.doTest(this.isOfKind.bind(this), 4)) {
-      return '4 of a Kind';
+      return ['4 of a Kind', 250];
     }
     if (this.doTest(this.isFullHouse.bind(this))) {
-      return 'Full House';
+      return ['Full House', 150];
     }
     if (this.doTest(this.isFlush.bind(this))) {
-      return 'Flush';
+      return ['Flush', 120];
     }
     if (this.doTest(this.isStraight.bind(this))) {
-      return 'Straight';
+      return ['Straight', 100];
     }
     if (this.doTest(this.isOfKind.bind(this), 3)) {
-      return '3 of a Kind';
+      return ['3 of a Kind', 60];
     }
     if (this.doTest(this.isPair.bind(this))) {
-      return '2 Pair'
+      return ['2 Pair', 40]
     }
     if (this.doTest(this.isOfKind.bind(this), 2)) {
-      return 'Pair';
+      return ['Pair', 5];
     }
+    return ['nothing', 0];
   }
 }

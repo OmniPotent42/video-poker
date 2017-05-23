@@ -6,15 +6,6 @@ import { Card } from '../card';
 import { HandDetector } from '../hand-detector';
 import { Suits } from '../suits';
 
-class PokerCard extends Card {
-  keep = false;
-
-  constructor(suit: Suits, value: number) {
-    super(suit, value);
-    this.keep = true;
-  }
-}
-
 @Component({
   selector: 'app-video-poker',
   templateUrl: './video-poker.component.html',
@@ -24,29 +15,37 @@ class PokerCard extends Card {
 export class VideoPokerComponent implements OnInit {
   log = console.log;
   
+  money: number;
   started = false;
   deck: Deck;
   player: Player = new Player('player1');
   winText: string = '';
+  mulligans: number[];
   
   constructor() { }
 
-  ngOnInit() {  
+  ngOnInit() {
+    this.money = 100;
     this.startGame();
-    
-    /*
-    // test the handDetector class
-    let testHand = [{suit: 0, value: 1, alternateValue: 14}, {suit: 1, value: 1, alternateValue: 14}, {suit: 2, value: 1, alternateValue: 14}, {suit: 0, value: 11}, {suit: 0, value: 10}];
-    
-    let testHandDetector = new HandDetector(testHand as Card[]);
-    
-    
-    console.log(testHandDetector.detectBestHand());
-    */
-    
+  }
+  
+  toggleMulligan(i: number) {
+    let index = this.mulligans.indexOf(i);
+    if (index > -1) {
+      this.mulligans[i] = -1;
+    } else {
+      this.mulligans[i] = i;
+    }
+    console.log(this.mulligans)
+  }
+  
+  isMulligan(i: number) {
+    return !!(this.mulligans.indexOf(i) + 1);
   }
 
   startGame() {
+    this.money -= 20;
+    this.mulligans = [0,1,2,3,4];
     this.winText = '';
     this.started = true;
     this.player.discard([0, 1, 2, 3, 4]);
@@ -57,25 +56,21 @@ export class VideoPokerComponent implements OnInit {
   
   mulligan() {
     this.started = false;
-    let cards = (this.player.hand as PokerCard[]);
+    let cards = this.player.hand;
     
-    let mulligans = [];
+    this.mulligans = this.mulligans.filter(function(i) {
+      return i > -1;
+    });
     
-    for (let i = 0; i < cards.length; i++) {
-      if (!cards[i].keep) {
-        mulligans.push(i);
-      }
-    }
+    this.player.discard(this.mulligans);
     
-    this.player.discard(mulligans);
+    this.player.draw(this.deck.draw(this.mulligans.length));
     
-    this.player.draw(this.deck.draw(mulligans.length));
+    let handInfo = new HandDetector(this.player.hand).detectBestHand();
     
-    let handDetector = new HandDetector(this.player.hand);
-    this.winText = handDetector.detectBestHand();
+    this.winText = 'You got a ' + handInfo[0] + '!';
+    this.money += (handInfo[1] as number);
     
-    for (let i = 0; i < this.player.hand.length; i++) {
-      (this.player.hand[i] as PokerCard).keep = true;
-    }
+    this.mulligans = [0,1,2,3,4]
   }
 }
