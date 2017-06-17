@@ -5,7 +5,7 @@ import { GameMenuComponent } from './game-menu/game-menu.component';
 import { VideoPokerComponent } from './video-poker/video-poker.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/menu', pathMatch: 'full' },
+  { path: '', redirectTo: '/video-poker', pathMatch: 'full' },
   { path: 'menu', component: GameMenuComponent },
   { path: 'video-poker', component: VideoPokerComponent }
 ];
